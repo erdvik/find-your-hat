@@ -12,9 +12,19 @@ const fieldArray = [
     ['░', '^', '░'],
 ];
 
-
 class Field {
-    constructor(field) {
+    constructor(field = [[]]) {
         this.field = field;
     }
-}
+    
+    print() {
+        const displayString = this.field.map(row => {
+            return row.join('');
+        }).join('\n');
+        console.log(displayString);
+    }
+};
+
+const test = new Field(fieldArray);
+
+test.print();
